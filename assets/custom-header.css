@@ -20,12 +20,29 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-     color: #000;
+}
+
+
+ .header .custom-header-btn{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background: #FFF544;
+    padding-left: 25px;
+    padding-right: 25px;
+    display: flex;
+    gap: 18px;
+      color: #000;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 25px;
+    padding-right: 25px;
     text-transform: uppercase;
     text-decoration: none;
     font-family: Jost;
     font-weight: 400;
+    font-style: Regular;
     font-size: 16px;
+    leading-trim: NONE;
     line-height: 20.48px;
     letter-spacing: 0px;
     text-align: center;
@@ -33,12 +50,9 @@
     text-transform: uppercase;
     width: 200px;
     justify-content: center;
-}
+  }
 
-
- 
-
-.custom-header-btn {
+  .custom-header-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px; /* spacing between text and icon */
