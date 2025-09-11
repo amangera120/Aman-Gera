@@ -9,3 +9,15 @@
     padding-top: 12px;
     padding-bottom: 12px;
 }
+
+.header a.custom-header-btn.header-desktop {
+    display: flex;
+    gap: 18px;
+    background: #FFF544;
+    padding: 12px 25px;
+    text-decoration: none;
+    width: 200px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
