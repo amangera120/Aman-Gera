@@ -2452,8 +2452,10 @@ input[type='checkbox'] {
 }
 
 .header__heading-logo {
-  height: auto;
-  max-width: 100%;
+    height: auto;
+    max-width: 100%;
+    width: 200%;
+    object-fit: contain;
 }
 
 .header__heading-logo-wrapper {
