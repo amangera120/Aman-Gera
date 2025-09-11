@@ -2466,6 +2466,10 @@ input[type='checkbox'] {
   .header__heading,
   .header__heading-link {
     text-align: center;
+    margin-top: 23px;
+    margin-bottom: 23px;
+    margin-left: 16px;
+    margin-right: 16px;
   }
 
   .header--mobile-left .header__heading,
