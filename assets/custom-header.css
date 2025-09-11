@@ -1,3 +1,11 @@
 .header .header__icons{
     display: none;
 }
+
+.header-wrapper .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
