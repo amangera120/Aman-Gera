@@ -228,7 +228,7 @@
 <path d="M1.56445 5.69336L0.814453 5.69336L0.814453 7.19336L1.56445 7.19336L1.56445 5.69336ZM29.4523 6.97369C29.7452 6.6808 29.7452 6.20592 29.4523 5.91303L24.6793 1.14006C24.3864 0.847167 23.9116 0.847167 23.6187 1.14006C23.3258 1.43295 23.3258 1.90783 23.6187 2.20072L27.8613 6.44336L23.6187 10.686C23.3258 10.9789 23.3258 11.4538 23.6187 11.7467C23.9116 12.0396 24.3864 12.0396 24.6793 11.7467L29.4523 6.97369ZM1.56445 7.19336L28.922 7.19336L28.922 5.69336L1.56445 5.69336L1.56445 7.19336Z" fill="black"/>
 </svg></a>
 
-    <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
+    {% comment %} <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <localization-form class="small-hide medium-hide" data-prevent-hide>
@@ -306,7 +306,7 @@
           </div>
         {%- endif -%}
       </a>
-    </div>
+    </div> {% endcomment %}
   </header>
 </{{ header_tag }}>
 
