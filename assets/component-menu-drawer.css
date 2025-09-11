@@ -259,6 +259,7 @@ details[open].menu-opening > .menu-drawer__submenu {
       flex-direction: column;
       /* justify-content: center; */
       align-items: center;
+      gap: 14px;
 }
 
 .menu-drawer__inner-container .custom-header-btn{
