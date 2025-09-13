@@ -20,13 +20,14 @@
 </style>
 
 <section class="custom-grid-section product-grid-container{{ section.id }} page-width">
-    {% if section.settings.heading != blank %}
-  <div class="custom-grid-heading">
-    {{ section.settings.heading }}
-  </div>
-{% endif %}
+  {% if section.settings.heading != blank %}
+    <div class="custom-grid-heading">
+      {{ section.settings.heading }}
+    </div>
+  {% endif %}
   <div class="grid-section">
     {% for block in section.blocks %}
+        {% if block.settings.grid_image != blank and block.settings.product != blank %}
       <div class="grid-item" {{ block.shopify_attributes }}>
         {% if block.settings.grid_image %}
           {{ block.settings.grid_image | image_url: width: 800 | image_tag: class: 'main-image', loading: 'lazy' }}
@@ -177,6 +178,7 @@
           </script>
         </div>
       </div>
+    {% endif %}
     {% endfor %}
   </div>
 </section>
