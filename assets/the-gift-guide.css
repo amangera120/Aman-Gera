@@ -12,7 +12,7 @@
   .the-gift-guide-top-container .the-gift-guide-main-heading-text{
     margin: 0;
     color: #000000;
-    font-family: Jost;
+    font-family: 'Jost';
     font-weight: 500;
     font-style: Medium;
     font-size: 70px;
@@ -25,7 +25,7 @@
 
   .the-gift-guide-top-container .the-gift-guide-sub-heading-text{
     margin: 0;
-    font-family: Jost;
+    font-family: 'Jost';
     font-weight: 400;
     font-size: 20px;
     line-height: 140%;
@@ -45,7 +45,7 @@
     text-align: center;
     max-width: 250px;
     color: #FFFFFF;
-    font-family: Jost;
+    font-family: 'Jost';
     font-weight: 400;
     font-style: Regular;
     font-size: 16px;
@@ -98,7 +98,7 @@
     text-align: center;
     background: #F5F5F5;
     padding: 10px 0;
-    font-family: Jost;
+    font-family: 'Jost';
     font-weight: 400;
     font-size: 16px;
     line-height: 13.42px;
@@ -154,7 +154,7 @@
         text-align: center;
         max-width: 250px;
         color: #FFFFFF;
-        font-family: Jost;
+        font-family: 'Jost';
         font-weight: 400;
         font-style: Regular;
         font-size: 14px;
@@ -188,7 +188,7 @@
     text-align: center;
     max-width: 250px;
     color: #FFFFFF;
-    font-family: Jost;
+    font-family: 'Jost';
     font-weight: 400;
     font-style: Regular;
     font-size: 12px;
@@ -223,7 +223,7 @@
     .the-gift-guide-top-container .the-gift-guide-bottom-line-text.mobile {
         display: block;
         color: #000000;
-        font-family: Jost;
+        font-family: 'Jost';
         font-weight: 400;
         font-size: 14px;
         line-height: 13.42px;
@@ -237,7 +237,7 @@
 
     .the-gift-guide-top-container .the-gift-guide-main-heading-text{
       color: #000000;
-      font-family: Jost;
+      font-family: 'Jost';
       font-weight: 500;
       font-style: Medium;
       font-size: 30px;
@@ -250,7 +250,7 @@
     }
 
     .the-gift-guide-top-container .the-gift-guide-subheading-mobile{
-      font-family: Jost;
+      font-family: 'Jost';
       font-weight: 400;
       font-style: Regular;
       font-size: 16px;

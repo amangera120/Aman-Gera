@@ -2816,7 +2816,7 @@ details[open] > .header__submenu {
 
 .header__menu-item span {
   transition: text-decoration var(--duration-short) ease;
-  font-family: Jost;
+  font-family: 'Jost';
   font-weight: 400;
   font-style: Regular;
   font-size: 16px;
