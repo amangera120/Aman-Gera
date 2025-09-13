@@ -423,7 +423,7 @@
 
 <section class="custom-grid-section product-grid-container{{ section.id }} page-width">
     <div class = "custom-grid-heading">
-        {{ section.settings.Section_heading }}
+        {{ section.settings.heading }}
     </div>
   <div class="grid-section">
     {% for block in section.blocks %}
@@ -794,7 +794,7 @@ document.addEventListener('DOMContentLoaded', () => {
   "settings": [
      {
       "type": "text",
-      "id": "Section_heading",
+      "id": "heading",
       "label": "Heading",
       "info": "Tisso vison in the wild"
     },
