@@ -19,27 +19,36 @@
 {% if section.settings.desktop_main_image_upper != blank and section.settings.heading != blank and section.settings.subheading != blank and section.settings.desktop_main_image_Bottom_right != blank %}
 <section class="the-gift-guide--{{ section.id }} the-gift-guide-top-container">
   <div class="The-gift-guide-main-container desktop">
-    <div class="the-gift-guide-upper-image">
-      {{
-        section.settings.desktop_main_image_upper
-        | image_url: width: 1600
-        | image_tag: class: 'The-gift-guide-upper', loading: 'eager'
-      }}
-    </div>
+    {% if section.settings.desktop_main_image_upper != blank %}
+        <div class="the-gift-guide-upper-image">
+        {{
+            section.settings.desktop_main_image_upper
+            | image_url: width: 1600
+            | image_tag: class: 'The-gift-guide-upper', loading: 'eager'
+        }}
+        </div>
+    {% endif %}
     <div class="the-gift-guide-bottom-container">
       <div class="the-gift-guide-left-text-container page-width">
-        <div class="the-gift-guide-main-heading">
-          <h2 class="the-gift-guide-main-heading-text">{{ section.settings.heading }}</h2>
-        </div>
+        {% if section.settings.heading != blank %}
+            <div class="the-gift-guide-main-heading">
+            <h2 class="the-gift-guide-main-heading-text">{{ section.settings.heading }}</h2>
+            </div>
+        {% endif %}
+        {% if section.settings.subheading != blank  %}
         <div class="the-gift-guide-sub-heading-text">
           {{ section.settings.subheading }}
         </div>
-        <div class="the-gift-guide-button-container">
-          <a href="{{ section.settings.button_link }}" class="the-gift-guide-button">
-            {{ section.settings.button_text }}
-          </a>
-        </div>
+        {% endif %}
+        {% if section.settings.button_link != blank and section.settings.button_text != blank %}
+            <div class="the-gift-guide-button-container">
+            <a href="{{ section.settings.button_link }}" class="the-gift-guide-button">
+                {{ section.settings.button_text }}
+            </a>
+            </div>
+        {% endif %}
       </div>
+      {% if section.settings.desktop_main_image_Bottom_right != blank %}
       <div class="the-gift-guide-right-container">
         {{
           section.settings.desktop_main_image_Bottom_right
@@ -47,10 +56,13 @@
           | image_tag: class: 'The-gift-guide-upper', loading: 'eager'
         }}
       </div>
+        {% endif %}
     </div>
+    {% if section.settings.bottom_text != blank %}
     <div class="the-gift-guide-bottom-line-text desktop">
       {{ section.settings.bottom_text }}
     </div>
+    {% endif %}
   </div>
 
   <div class="The-gift-guide-main-container mobile">
@@ -80,7 +92,6 @@
     </div>
   </div>
 </section>
-
 {%  endif %}
 
 {% schema %}
