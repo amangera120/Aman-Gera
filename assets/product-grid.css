@@ -273,6 +273,7 @@
         flex-direction: column-reverse;
         margin-top: 10px;
         margin-bottom: 38px;
+        gap: 11px;
     }
 
     .custom-grid-section .custom-select {
