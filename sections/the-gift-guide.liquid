@@ -1,161 +1,89 @@
 {{ 'the-gift-guide.css' | asset_url | stylesheet_tag }}
 <style>
-.the-gift-guide--{{ section.id }} {
-  margin-top: {{ section.settings.margin_top_desktop }}px;
-  margin-bottom: {{ section.settings.margin_bottom_desktop }}px;
-  padding-top: {{ section.settings.padding_top_desktop }}px;
-  padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
-}
-
- 
-
- 
-
-  @media screen and (max-width: 768px) {
-
   .the-gift-guide--{{ section.id }} {
-    margin-top: {{ section.settings.margin_top_mobile }}px;
-    margin-bottom: {{ section.settings.margin_bottom_mobile }}px;
-    padding-top: {{ section.settings.padding_top_mobile }}px;
-    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
-  }
-    .the-gift-guide-top-container .The-gift-guide-main-container.desktop{
-      display:  none;
-    }
-    
-    .the-gift-guide-top-container .The-gift-guide-main-container.mobile{
-      display:  block;
-      text-align: center;
-    }
-
-    .the-gift-guide-top-container .the-gift-guide-bottom-line-text.desktop {
-        display: none;
-    }
-
-    .the-gift-guide-top-container .the-gift-guide-bottom-line-text.mobile {
-        display: block;
-        color: #000000;
-        font-family: Jost;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 13.42px;
-        letter-spacing: 0px;
-        text-align: center;
-        vertical-align: middle;
-        text-transform: uppercase;
-        background: #F5F5F5;
-        padding: 10px 0;
-    }
-
-    .the-gift-guide-top-container .the-gift-guide-main-heading-text{
-      color: #000000;
-      font-family: Jost;
-      font-weight: 500;
-      font-style: Medium;
-      font-size: 30px;
-      leading-trim: NONE;
-      line-height: 100%;
-      letter-spacing: 0px;
-      text-align: center;
-      margin-bottom: 24px;
-      vertical-align: middle;
-    }
-
-    .the-gift-guide-top-container .the-gift-guide-subheading-mobile{
-      font-family: Jost;
-      font-weight: 400;
-      font-style: Regular;
-      font-size: 16px;
-      leading-trim: NONE;
-      line-height: 130%;
-      letter-spacing: 0px;
-      text-align: center;
-      color: #000000;
-      margin-bottom: 12px;
-    }
-
-    .the-gift-guide-top-container .the-gift-guide-mobile-image{
-      position: relative;
-    }
-
-    .the-gift-guide-top-container .the-gift-guide-mobile-button-container{
-      position: absolute;
-      left: 50%;
-      bottom: 40px;
-      transform: translate(-50%, -50%);
-    }
-    
+    margin-top: {{ section.settings.margin_top_desktop }}px;
+    margin-bottom: {{ section.settings.margin_bottom_desktop }}px;
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
   }
 
 
+
+
+
+    @media screen and (max-width: 768px) {
+    .the-gift-guide--{{ section.id }} {
+      margin-top: {{ section.settings.margin_top_mobile }}px;
+      margin-bottom: {{ section.settings.margin_bottom_mobile }}px;
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    }
 </style>
-<section class = "the-gift-guide--{{ section.id }} the-gift-guide-top-container">
-
-<div class = "The-gift-guide-main-container desktop">
+<section class="the-gift-guide--{{ section.id }} the-gift-guide-top-container">
+  <div class="The-gift-guide-main-container desktop">
     <div class="the-gift-guide-upper-image">
-       {{
-          section.settings.desktop_main_image_upper
-          | image_url: width: 1600
-          | image_tag: class: 'The-gift-guide-upper', loading: 'eager'
-        }}
+      {{
+        section.settings.desktop_main_image_upper
+        | image_url: width: 1600
+        | image_tag: class: 'The-gift-guide-upper', loading: 'eager'
+      }}
     </div>
     <div class="the-gift-guide-bottom-container">
       <div class="the-gift-guide-left-text-container page-width">
-          <div class = "the-gift-guide-main-heading">
-            <h2 class="the-gift-guide-main-heading-text">{{ section.settings.heading }}</h2>
-          </div>
-          <div class="the-gift-guide-sub-heading-text">
-            {{ section.settings.subheading }}
-          </div>
-          <div class="the-gift-guide-button-container">
-            <a href="{{ section.settings.button_link }}" class="the-gift-guide-button">
-              {{ section.settings.button_text }}
-            </a>
-          </div>
+        <div class="the-gift-guide-main-heading">
+          <h2 class="the-gift-guide-main-heading-text">{{ section.settings.heading }}</h2>
+        </div>
+        <div class="the-gift-guide-sub-heading-text">
+          {{ section.settings.subheading }}
+        </div>
+        <div class="the-gift-guide-button-container">
+          <a href="{{ section.settings.button_link }}" class="the-gift-guide-button">
+            {{ section.settings.button_text }}
+          </a>
+        </div>
       </div>
       <div class="the-gift-guide-right-container">
-          {{
-            section.settings.desktop_main_image_Bottom_right
-            | image_url: width: 1600
-            | image_tag: class: 'The-gift-guide-upper', loading: 'eager'
-          }}
+        {{
+          section.settings.desktop_main_image_Bottom_right
+          | image_url: width: 1600
+          | image_tag: class: 'The-gift-guide-upper', loading: 'eager'
+        }}
       </div>
     </div>
-    <div class = "the-gift-guide-bottom-line-text desktop">
-        {{ section.settings.bottom_text }}
+    <div class="the-gift-guide-bottom-line-text desktop">
+      {{ section.settings.bottom_text }}
     </div>
-</div>
+  </div>
 
-<div class = "The-gift-guide-main-container mobile">
-  <div class = "The-gift-guide-mobile-heading">
-    <h2 class="the-gift-guide-main-heading-text">{{ section.settings.heading }}</h2>
-  </div>
-  <div class = "the-gift-guide-subheading-mobile">
-    {{ section.settings.subheading_mobile }}
-  </div>
-  <div class = "the-gift-guide-mobile-image-container">
-    <div class = "the-gift-guide-mobile-image">
+  <div class="The-gift-guide-main-container mobile">
+    <div class="The-gift-guide-mobile-heading">
+      <h2 class="the-gift-guide-main-heading-text">{{ section.settings.heading }}</h2>
+    </div>
+    <div class="the-gift-guide-subheading-mobile">
+      {{ section.settings.subheading_mobile }}
+    </div>
+    <div class="the-gift-guide-mobile-image-container">
+      <div class="the-gift-guide-mobile-image">
         {{
-              section.settings.mobile_main_image
-              | image_url: width: 1100
-              | image_tag: class: 'The-gift-guide-upper', loading: 'eager'
+          section.settings.mobile_main_image
+          | image_url: width: 1100
+          | image_tag: class: 'The-gift-guide-upper', loading: 'eager'
         }}
 
         <div class="the-gift-guide-mobile-button-container">
-            <a href="{{ section.settings.button_link }}" class="the-gift-guide-button">
-              {{ section.settings.button_text }}
-            </a>
+          <a href="{{ section.settings.button_link }}" class="the-gift-guide-button">
+            {{ section.settings.button_text }}
+          </a>
         </div>
+      </div>
+    </div>
+    <div class="the-gift-guide-bottom-line-text mobile">
+      {{ section.settings.bottom_text_mobile }}
     </div>
   </div>
-   <div class = "the-gift-guide-bottom-line-text mobile">
-        {{ section.settings.bottom_text_mobile }}
-    </div>
-</div>
-
 </section>
-
-
 
 {% schema %}
 {
@@ -252,7 +180,7 @@
       "label": "Sub Heading Desktop",
       "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
     },
-     {
+    {
       "type": "text",
       "id": "subheading_mobile",
       "label": "Sub Heading Mobile",
