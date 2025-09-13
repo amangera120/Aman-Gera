@@ -1,75 +1,120 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "the_gift_guide_fznhAm": {
+      "type": "the-gift-guide",
+      "name": "The Gift Guide",
+      "settings": {
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 20,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "margin_top_mobile": 15,
+        "margin_bottom_mobile": 15,
+        "padding_top_mobile": 15,
+        "padding_bottom_mobile": 0,
+        "desktop_main_image_upper": "shopify://shop_images/Frame_2.png",
+        "desktop_main_image_Bottom_right": "shopify://shop_images/Frame_1.png",
+        "mobile_main_image": "shopify://shop_images/Frame_1958_1_2950f0ce-985c-4318-a14a-0ff78691ebd7.jpg",
+        "heading": "The Gift Guide",
+        "subheading": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.",
+        "subheading_mobile": "Discover Joy: Your Ultimate Holiday Gift Destination.",
+        "button_text": "Shop Now",
+        "button_link": "#",
+        "bottom_text": "Sustainable Ethecally Made Sizes from XXS to 6XL",
+        "bottom_text_mobile": "SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR"
+      }
+    },
+    "product_grid_section_TRr4FK": {
+      "type": "Product-grid-section",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "gridcol_6cGXLK": {
+          "type": "gridcol",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "grid_image": "shopify://shop_images/black-bag-over-the-shoulder_925x_4cae5708-5e9e-4e7e-96ec-9649f0c20cd8.jpg",
+            "product": "black-leather-bag",
+            "top_position": 20,
+            "right_poisition": 20
           }
         },
-        "button": {
-          "type": "buttons",
+        "gridcol_jLfzHf": {
+          "type": "gridcol",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "grid_image": "shopify://shop_images/man-adjusts-blue-tuxedo-bowtie_925x_55a49e12-d54b-488e-b7a0-ea4c201eb01f.jpg",
+            "product": "blue-silk-tuxedo",
+            "top_position": 20,
+            "right_poisition": 20
+          }
+        },
+        "gridcol_4rQaEw": {
+          "type": "gridcol",
+          "settings": {
+            "grid_image": "shopify://shop_images/red-plaid-shirt_925x_70e9e5a8-8fc5-4d60-9a9a-cc2e0dd57cc9.jpg",
+            "product": "chequered-red-shirt",
+            "top_position": 20,
+            "right_poisition": 20
+          }
+        },
+        "gridcol_zBAX7P": {
+          "type": "gridcol",
+          "settings": {
+            "grid_image": "shopify://shop_images/leather-jacket-and-tea_925x_2490cde1-7e61-4151-9a65-de8a763bc701.jpg",
+            "product": "classic-leather-jacket",
+            "top_position": 20,
+            "right_poisition": 20
+          }
+        },
+        "gridcol_t3R69n": {
+          "type": "gridcol",
+          "settings": {
+            "grid_image": "shopify://shop_images/casual-fashion-woman_925x_56b56608-f207-45c1-b677-bb5aa26c1c7a.jpg",
+            "product": "classic-varsity-top",
+            "top_position": 20,
+            "right_poisition": 20
+          }
+        },
+        "gridcol_fFm3NA": {
+          "type": "gridcol",
+          "settings": {
+            "grid_image": "shopify://shop_images/young-female-models-denim_925x_44c2cf9e-4030-4347-9d4a-f0e4a1479b4a.jpg",
+            "product": "dark-denim-top",
+            "top_position": 20,
+            "right_poisition": 20
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "gridcol_6cGXLK",
+        "gridcol_jLfzHf",
+        "gridcol_4rQaEw",
+        "gridcol_zBAX7P",
+        "gridcol_t3R69n",
+        "gridcol_fFm3NA"
       ],
+      "name": "Product Grid Section",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "free_product_variant_id": "50501402755350",
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "the_gift_guide_fznhAm",
+    "product_grid_section_TRr4FK"
   ]
 }
