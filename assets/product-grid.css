@@ -245,7 +245,12 @@
       cursor: pointer;
       text-transform: uppercase;
       border-radius: 3px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
+
+      .custom-grid-section .add-to-cart-btn:hover {
+
+      }
 
     .custom-grid-section .product-image-and-information-container {
         display: flex;
