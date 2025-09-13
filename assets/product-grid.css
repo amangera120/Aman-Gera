@@ -438,4 +438,9 @@
         color: #000000;
 
        }
+
+       .custom-grid-section .popup-options {
+        padding-left: 4px;
+        padding-right: 4px;
+       }
     }
