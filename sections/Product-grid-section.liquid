@@ -1,3 +1,790 @@
+<style>
+
+.product-grid-container{{ section.id }}{
+  margin-top: {{ section.settings.margin_top_desktop }}px;
+  margin-bottom: {{ section.settings.margin_bottom_desktop }}px;
+  padding-top: {{ section.settings.padding_top_desktop }}px;
+  padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+}
+    .grid-section {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .grid-item {
+      position: relative;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .main-image {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .plus-icon {
+      position: absolute;
+      transform: translate(50%, -50%);
+      cursor: pointer;
+    }
+
+    .plus-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .product-popup-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .product-popup {
+      background: #fff;
+      width: 80%;
+      max-width: 450px;
+      box-shadow: 0px 2px 4px 0px #00000033;
+      padding: 16px;
+      position: relative;
+      border-radius: 4px;
+    }
+
+
+    .popup-inner h3 {
+        color: #000000;
+        font-family: Jost;
+        font-weight: 300;
+        font-style: Light;
+        font-size: 16px;
+        leading-trim: NONE;
+        line-height: 120%;
+        letter-spacing: 0px;
+        vertical-align: middle;
+        margin: 0px;
+        margin-bottom:20px;
+        margin-top: 13px;
+    }
+
+    .popup-inner .popup-price {
+        margin: 0px;
+        color: #000000;
+        font-family: Lustria;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        leading-trim: NONE;
+        line-height: 120%;
+        letter-spacing: 0px;
+        vertical-align: middle;
+        margin-bottom: 12px;
+    }
+
+    .popup-inner .popup-desc {
+        margin: 0px;
+        color: #000000;
+        font-family: Jost;
+        font-weight: 300;
+        font-style: Light;
+        font-size: 14px;
+        leading-trim: NONE;
+        line-height: 110.00000000000001%;
+        letter-spacing: -1%;
+    }
+
+  .popup-options {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+    .popup-options label {
+      display: block;
+      margin: 0px;
+      color: #333333;
+      font-family: Jost;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 130%;
+    letter-spacing: 0%;
+    margin-bottom: 7px;
+    }
+
+    .option-buttons {
+      display: flex;
+      gap: 0px;
+    }
+
+    .option-buttons button {
+      flex: 1;
+      border: 1px solid #000;
+      padding: 0;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .option-select {
+      width: 100%;
+      padding: 6px;
+    }
+
+    .add-to-cart-btn {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      background: #000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-family: Jost;
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 16px;
+      leading-trim: NONE;
+      line-height: 20.48px;
+      letter-spacing: 0px;
+      text-align: center;
+      vertical-align: middle;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      display: flex;
+    justify-content: center;
+    gap: 28px;
+
+    }
+
+    .add-to-cart-btn svg, .add-to-cart-btn svg path{
+    fill: #fff;
+    stroke: #fff;
+    }
+
+    .product-popup {
+      background: #fff;
+      width: 90%;
+      max-width: 350px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-radius: 0;
+      box-shadow: 0px 2px 4px 0px #00000033;
+      padding: 36px 20px 25px 20px;
+    }
+
+    .popup-inner {
+      display: flex;
+      gap: 20px;
+    }
+
+    .popup-left {
+      flex: 1;
+    }
+
+    .popup-image {
+        width: 100%;
+        object-fit: cover;
+        height: auto;
+        height: 100%;
+    }
+
+    .popup-right {
+      flex: 1.5;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0px;
+    }
+
+
+
+    .popup-options label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+
+    .option-btn {
+      flex: 1;
+      border: 1px solid #000;
+      padding: 8px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color .7s ease, color .7s ease, background-position .7s ease;
+    }
+
+    .option-btn.active {
+      background: #000;
+      color: #fff;
+    }
+
+    .custom-select select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #000;
+      font-size: 14px;
+    }
+
+    .add-to-cart-btn {
+      margin-top: auto;
+      width: 100%;
+      padding: 12px;
+      background: #000;
+      color: #fff;
+      border: none;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      text-transform: uppercase;
+      border-radius: 3px;
+    }
+
+    .product-image-and-information-container {
+        display: flex;
+        gap: 8px;
+    }
+
+    .product-left-side-image-container {
+        max-width: 120px;
+    }
+
+    .popup-options-values{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 10px;
+        margin-bottom: 38px;
+    }
+
+    /* --- Custom Select --- */
+    .custom-select {
+      position: relative;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .select-trigger {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff;
+        transition: 0.3s;
+        padding-left: 12px;
+        border: 0.5px solid #000000;
+    }
+
+    .size-svg{
+        border-left: .5px solid #000000;
+        padding: 6px 18px;
+        height: 40px;
+        max-height: 40px;
+    }
+
+    .arrow {
+      font-size: 12px;
+      transition: transform 0.3s;
+    }
+
+    .select-options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      max-height: 0;
+      overflow: hidden;
+      border: 1px solid #ccc;
+      border-top: none;
+      background: #fff;
+      transition: max-height 0.3s ease;
+      z-index: 10;
+    }
+
+    .custom-select.open .select-options {
+      max-height: 300px; /* enough for all options */
+    }
+
+    .custom-select.open .arrow svg {
+      transform: rotate(180deg);
+
+    }
+
+      .custom-select .arrow svg {
+          transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+      }
+
+
+
+    .select-option {
+      padding: 10px;
+      transition: background .3s, color .3s;
+      text-align: center;
+      font-family: Jost;
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 16px;
+      leading-trim: NONE;
+      line-height: 100%;
+      letter-spacing: -2%;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .select-option:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    .color-strip {
+      width: 6px;
+      height: 40px;
+      margin-right: 8px;
+      display: inline-block;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-right: .5px solid #000000;
+      max-height: 40px;
+      border-top: .5px solid #000000;
+      border-bottom: .5px solid #000000;
+  }
+  .option-btn {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    padding: 6px 12px;
+    background: #fff;
+    cursor: pointer;
+  }
+
+
+  .select-trigger .label-name{
+      font-family: Jost;
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 16px;
+      leading-trim: NONE;
+      line-height: 100%;
+      letter-spacing: -2%;
+      vertical-align: middle;
+      color: #000;
+  }
+
+  .size-label-name{
+      width: 100%;
+      text-align: center;
+      line-height: 0px;
+  }
+
+  .option-buttons button.btn-without-strip{
+    height: 40px;
+    max-height: 40px;
+    padding-left: 10px;
+  }
+
+
+
+
+    @media (max-width: 767px) {
+      .product-grid-container{{ section.id }}{
+          margin-top: {{ section.settings.margin_top_mobile }}px;
+          margin-bottom: {{ section.settings.margin_bottom_mobile }}px;
+          padding-top: {{ section.settings.padding_top_mobile }}px;
+          padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      }
+      .grid-section {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+      }
+
+      .plus-icon svg {
+        width: 15px;
+        height: 15px;
+      }
+
+       .popup-inner {
+        flex-direction: column;
+      }
+    }
+</style>
+
+<section class="custom-grid-section product-grid-container{{ section.id }}">
+  <div class="grid-section">
+    {% for block in section.blocks %}
+      <div class="grid-item" {{ block.shopify_attributes }}>
+        {% if block.settings.grid_image %}
+          {{ block.settings.grid_image | image_url: width: 800 | image_tag: class: 'main-image', loading: 'lazy' }}
+        {% endif %}
+
+        <!-- Plus Icon -->
+        <div
+          class="plus-icon"
+          style="top: {{ block.settings.top_position }}%; right: {{ block.settings.right_poisition }}%;"
+          data-popup-id="popup-{{ block.id }}"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 17" fill="none">
+            <circle cx="7.86496" cy="8.27719" r="7.85714" fill="#F8F8F8" fill-opacity="0.9"/>
+            <path d="M8.1123 5.44995V11.4939" stroke="black" stroke-linecap="square" stroke-linejoin="round"/>
+            <path d="M5.09033 8.47192H11.1343" stroke="black" stroke-linecap="square" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Hidden Popup for this product -->
+      <div class="product-popup-overlay" id="popup-{{ block.id }}">
+        <div class="product-popup">
+          <button class="close-btn" onclick="closePopup('{{ block.id }}')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M5.0376 4.94354L13.5229 13.4288" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
+              <path d="M5.0376 13.4285L13.5229 4.94325" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          {% assign product = all_products[block.settings.product.handle] %}
+          {% if product %}
+            <div class="popup-inner">
+              <div class="product-popup-main-container">
+                <div class="product-image-and-information-container">
+                  <div class="product-left-side-image-container">
+                    {{
+                      product.featured_image
+                      | image_url: width: 400
+                      | image_tag: class: 'popup-image', loading: 'lazy'
+                    }}
+                  </div>
+                  <div class="product-right-side-information">
+                    <h3 class="popup-title">{{ product.title }}</h3>
+                    <p class="popup-price">{{ product.price | money }}</p>
+                    <p class="popup-desc">{{ product.description | strip_html | truncate: 120 }}</p>
+                  </div>
+                </div>
+                {% if product.options.size > 0 %}
+                  <div class="popup-options-values">
+                    {% for option in product.options_with_values %}
+                      <div class="popup-options">
+                        <label>{{ option.name }}</label>
+                        {% if option.name contains 'Color' %}
+                          <div class="option-buttons">
+                            {% for value in option.values %}
+                              {% assign variant = product.variants | where: 'option1', value | first %}
+                              {% if variant == null %}
+                                {% assign variant = product.variants | where: 'option2', value | first %}
+                              {% endif %}
+                              {% if variant == null %}
+                                {% assign variant = product.variants | where: 'option3', value | first %}
+                              {% endif %}
+                              {% if variant and variant.metafields.custom.color_code %}
+                                {% assign strip = variant.metafields.custom.color_code %}
+                              {% endif %}
+                              <button
+                                class="option-btn {% unless strip != blank %} btn-without-strip {% endunless %}"
+                                data-option="{{ option.name }}"
+                                data-value="{{ value }}"
+                                data-variant-id="{{ variant.id | default: '' }}"
+                                data-in-stock="{{ variant.available | default: false }}"
+                              >
+                                {% if variant and variant.metafields.custom.color_code %}
+                                  <span
+                                    class="color-strip"
+                                    style="background-color: {{ variant.metafields.custom.color_code }}"
+                                  ></span>
+                                {% endif %}
+                                {{ value }}
+                              </button>
+                            {% endfor %}
+                          </div>
+                        {% else %}
+                          <div class="custom-select" data-select>
+                            <div class="select-trigger">
+                              <div class="size-label-name">
+                                <span class="label-name">Choose your {{ option.name }}</span>
+                              </div>
+                              <div class="size-svg">
+                                <span class="arrow">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="10"
+                                    viewBox="0 0 16 10"
+                                    fill="none"
+                                  >
+                                    <path d="M2 2L8 8L14 2" stroke="black" stroke-width="1.5" stroke-linecap="square"/>
+                                  </svg>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="select-options">
+                              {% for value in option.values %}
+                                {% assign variant = product.variants | where: 'option1', value | first %}
+                                {% if variant == null %}
+                                  {% assign variant = product.variants | where: 'option2', value | first %}
+                                {% endif %}
+                                {% if variant == null %}
+                                  {% assign variant = product.variants | where: 'option3', value | first %}
+                                {% endif %}
+                                <div
+                                  class="select-option"
+                                  data-option="{{ option.name }}"
+                                  data-value="{{ value }}"
+                                  data-variant-id="{{ variant.id | default: '' }}"
+                                  data-in-stock="{{ variant.available | default: false }}"
+                                >
+                                  {{ value }}
+                                </div>
+                              {% endfor %}
+                            </div>
+                          </div>
+                        {% endif %}
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                <p class="popup-error-message" style="color:red; display:none;">Please select an option.</p>
+                <button
+                  class="add-to-cart-btn"
+                  data-main-product=""
+                  data-addon-product="{{ section.settings.free_product_variant_id }}"
+                >
+                  Add to Cart
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="12" viewBox="0 0 31 12" fill="none">
+                      <path d="M1.36377 4.80469L0.61377 4.80469L0.613769 6.30469L1.36377 6.30469L1.36377 4.80469ZM30.184 6.08502C30.4768 5.79213 30.4768 5.31725 30.184 5.02436L25.411 0.251388C25.1181 -0.0415052 24.6432 -0.0415052 24.3503 0.251388C24.0574 0.544282 24.0574 1.01916 24.3503 1.31205L28.593 5.55469L24.3503 9.79733C24.0574 10.0902 24.0574 10.5651 24.3503 10.858C24.6432 11.1509 25.1181 11.1509 25.411 10.858L30.184 6.08502ZM1.36377 6.30469L29.6536 6.30469L29.6536 4.80469L1.36377 4.80469L1.36377 6.30469Z" fill="black"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          {% endif %}
+
+          <script type="application/json" data-variants>
+            {{ product.variants | json }}
+          </script>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+  function closePopup(id) {
+    const popup = document.getElementById('popup-' + id);
+    popup.style.display = 'none';
+    document.body.style.overflow = 'unset';
+    // Reset selected options in the popup
+    const colorButtons = popup.querySelectorAll('.option-btn');
+    colorButtons.forEach((btn) => btn.classList.remove('active')); // optional: reset active state
+
+    const selectTriggers = popup.querySelectorAll('.select-trigger .label-name');
+    selectTriggers.forEach((span) => {
+      const parentSelect = span.closest('.custom-select');
+      const optionName = parentSelect.dataset.option || '';
+      span.textContent = `Choose your ${optionName}`;
+      parentSelect.classList.remove('open');
+    });
+
+    // Hide any error messages
+    const errorMsg = popup.querySelector('.popup-error-message');
+    if (errorMsg) {
+      errorMsg.style.display = 'none';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const plusIcons = document.querySelectorAll('.plus-icon');
+
+    plusIcons.forEach((icon) => {
+      icon.addEventListener('click', function (e) {
+        e.preventDefault();
+        const popupId = this.getAttribute('data-popup-id');
+        document.getElementById(popupId).style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+  });
+
+  document.querySelectorAll('[data-select]').forEach((select) => {
+    const trigger = select.querySelector('.select-trigger');
+    const options = select.querySelectorAll('.select-option');
+    const span = trigger.querySelector('span');
+
+    trigger.addEventListener('click', () => {
+      select.classList.toggle('open');
+    });
+
+    options.forEach((option) => {
+      option.addEventListener('click', () => {
+        span.textContent = option.textContent;
+        select.classList.remove('open');
+      });
+    });
+
+  });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const popups = document.querySelectorAll('.product-popup-overlay');
+
+  popups.forEach((popup) => {
+    const addToCartBtn = popup.querySelector('.add-to-cart-btn');
+    const errorMsg = popup.querySelector('.popup-error-message');
+    const variantsScript = popup.querySelector('[data-variants]');
+    const productVariants = variantsScript ? JSON.parse(variantsScript.textContent) : [];
+
+    let selectedOptions = {
+      Color: null,
+      Size: null,
+      VariantId: null,
+      InStock: true,
+    };
+
+    function findMatchingVariant() {
+        return productVariants.find((variant) => {
+          let colorMatch = true;
+          let sizeMatch = true;
+
+          if (selectedOptions.Color) {
+            colorMatch =
+              variant.option1 === selectedOptions.Color ||
+              variant.option2 === selectedOptions.Color ||
+              variant.option3 === selectedOptions.Color;
+          }
+
+          if (selectedOptions.Size) {
+            sizeMatch =
+              variant.option1 === selectedOptions.Size ||
+              variant.option2 === selectedOptions.Size ||
+              variant.option3 === selectedOptions.Size;
+          }
+
+          return colorMatch && sizeMatch;
+        });
+    }
+
+
+
+    function checkFreeProductEligibility() {
+      if (selectedOptions.Color === 'Black' && selectedOptions.Size === 'M') {
+        console.log('You are eligible for a free product!');
+        return true;
+      }
+      return false; 
+    }
+
+    // Handle color selection
+      popup.querySelectorAll('.option-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          popup.querySelectorAll('.option-btn').forEach((button) => {
+            button.classList.remove('active');
+          });
+        btn.classList.add('active');
+          selectedOptions.Color = btn.dataset.value;
+
+          const variant = findMatchingVariant();
+          if (variant) {
+            selectedOptions.VariantId = variant.id;
+            selectedOptions.InStock = variant.available;
+          } else {
+            selectedOptions.VariantId = null;
+          }
+
+          addToCartBtn.setAttribute('data-main-product', JSON.stringify(selectedOptions));
+          errorMsg.style.display = 'none';
+
+        });
+      });
+
+      // Handle size selection
+      popup.querySelectorAll('.select-option').forEach((option) => {
+        option.addEventListener('click', () => {
+          selectedOptions.Size = option.dataset.value;
+
+          const variant = findMatchingVariant();
+          if (variant) {
+            selectedOptions.VariantId = variant.id;
+            selectedOptions.InStock = variant.available;
+          } else {
+            selectedOptions.VariantId = null;
+          }
+
+          addToCartBtn.setAttribute('data-main-product', JSON.stringify(selectedOptions));
+          errorMsg.style.display = 'none';
+
+        });
+      });
+
+
+    // Add to cart
+    addToCartBtn.addEventListener('click', (e) => {
+      if (!selectedOptions.Color || !selectedOptions.Size) {
+        errorMsg.style.display = 'block';
+        errorMsg.textContent = 'Please select all required options.';
+        return;
+      }
+
+      if (!selectedOptions.InStock) {
+        errorMsg.style.display = 'block';
+        errorMsg.textContent = 'This variant is out of stock.';
+        return;
+      }
+
+      errorMsg.style.display = 'none';
+
+      // Get the variant ID of the addon product (from data attribute)
+      const addonProductId = addToCartBtn.dataset.addonProduct;
+
+      // If the user is eligible for the free product, add both the main product and the addon product
+      const isEligibleForFreeProduct = checkFreeProductEligibility();
+
+      const productsToAdd = [
+        {
+          id: selectedOptions.VariantId,
+          quantity: 1,
+        },
+      ];
+
+      if (isEligibleForFreeProduct && addonProductId) {
+        // If eligible for free product, add the addon product as well
+        productsToAdd.push({
+          id: addonProductId,
+          quantity: 1,
+        });
+      }
+
+      // Add to cart API
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({ items: productsToAdd }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log('✅ Products added to cart:', data);
+          window.location.href = '/cart';
+        })
+        .catch((err) => {
+          console.error('❌ Error adding to cart:', err);
+        });
+    });
+  });
+});
+</script>
+
 {% schema %}
 {
   "name": "Product Grid Section",
