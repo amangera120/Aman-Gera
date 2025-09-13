@@ -204,3 +204,73 @@
 }
 
 }
+
+
+ @media screen and (max-width: 768px) {
+    .the-gift-guide-top-container .The-gift-guide-main-container.desktop{
+      display:  none;
+    }
+    
+    .the-gift-guide-top-container .The-gift-guide-main-container.mobile{
+      display:  block;
+      text-align: center;
+    }
+
+    .the-gift-guide-top-container .the-gift-guide-bottom-line-text.desktop {
+        display: none;
+    }
+
+    .the-gift-guide-top-container .the-gift-guide-bottom-line-text.mobile {
+        display: block;
+        color: #000000;
+        font-family: Jost;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 13.42px;
+        letter-spacing: 0px;
+        text-align: center;
+        vertical-align: middle;
+        text-transform: uppercase;
+        background: #F5F5F5;
+        padding: 10px 0;
+    }
+
+    .the-gift-guide-top-container .the-gift-guide-main-heading-text{
+      color: #000000;
+      font-family: Jost;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 30px;
+      leading-trim: NONE;
+      line-height: 100%;
+      letter-spacing: 0px;
+      text-align: center;
+      margin-bottom: 24px;
+      vertical-align: middle;
+    }
+
+    .the-gift-guide-top-container .the-gift-guide-subheading-mobile{
+      font-family: Jost;
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 16px;
+      leading-trim: NONE;
+      line-height: 130%;
+      letter-spacing: 0px;
+      text-align: center;
+      color: #000000;
+      margin-bottom: 12px;
+    }
+
+    .the-gift-guide-top-container .the-gift-guide-mobile-image{
+      position: relative;
+    }
+
+    .the-gift-guide-top-container .the-gift-guide-mobile-button-container{
+      position: absolute;
+      left: 50%;
+      bottom: 40px;
+      transform: translate(-50%, -50%);
+    }
+    
+  }
