@@ -156,6 +156,7 @@
     .custom-grid-section .add-to-cart-btn svg, .custom-grid-section .add-to-cart-btn svg path{
     fill: #fff;
     stroke: #fff;
+    transition: fill 0.3s ease, color 0.3s ease;
     }
 
     .custom-grid-section .product-popup {
@@ -249,7 +250,8 @@
     }
 
       .custom-grid-section .add-to-cart-btn:hover {
-
+            background: #FFF544;
+            color: #000;
       }
 
     .custom-grid-section .product-image-and-information-container {
