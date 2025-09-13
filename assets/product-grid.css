@@ -254,6 +254,11 @@
             color: #000;
       }
 
+      .custom-grid-section .add-to-cart-btn:hover svg, .custom-grid-section .add-to-cart-btn:hover svg path{
+        fill: #000;
+        stroke: #000;
+      }
+
     .custom-grid-section .product-image-and-information-container {
         display: flex;
         gap: 8px;
