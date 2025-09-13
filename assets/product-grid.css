@@ -440,8 +440,8 @@
        }
 
        .custom-grid-section .popup-options {
-        padding-left: 4px;
-        padding-right: 4px;
+        width: 98%;
+        margin: auto;
        }
        .custom-grid-section .product-left-side-image-container{
         width: 70%;
