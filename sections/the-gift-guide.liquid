@@ -16,6 +16,7 @@
         }
     }
 </style>
+{% if section.settings.desktop_main_image_upper != blank and section.settings.heading != blank and section.settings.subheading != blank %}
 <section class="the-gift-guide--{{ section.id }} the-gift-guide-top-container">
   <div class="The-gift-guide-main-container desktop">
     <div class="the-gift-guide-upper-image">
@@ -79,6 +80,8 @@
     </div>
   </div>
 </section>
+
+{%  endif %}
 
 {% schema %}
 {
