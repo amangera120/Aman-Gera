@@ -1,29 +1,28 @@
 {{ 'product-grid.css' | asset_url | stylesheet_tag }}
 
 <style>
-
-.product-grid-container{{ section.id }}{
-  margin-top: {{ section.settings.margin_top_desktop }}px;
-  margin-bottom: {{ section.settings.margin_bottom_desktop }}px;
-  padding-top: {{ section.settings.padding_top_desktop }}px;
-  padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
-}
+  .product-grid-container{{ section.id }}{
+    margin-top: {{ section.settings.margin_top_desktop }}px;
+    margin-bottom: {{ section.settings.margin_bottom_desktop }}px;
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+  }
 
 
     @media (max-width: 767px) {
-      .product-grid-container{{ section.id }}{
-          margin-top: {{ section.settings.margin_top_mobile }}px;
-          margin-bottom: {{ section.settings.margin_bottom_mobile }}px;
-          padding-top: {{ section.settings.padding_top_mobile }}px;
-          padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
-      }
+        .product-grid-container{{ section.id }}{
+            margin-top: {{ section.settings.margin_top_mobile }}px;
+            margin-bottom: {{ section.settings.margin_bottom_mobile }}px;
+            padding-top: {{ section.settings.padding_top_mobile }}px;
+            padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+        }
     }
 </style>
 
 <section class="custom-grid-section product-grid-container{{ section.id }} page-width">
-    <div class = "custom-grid-heading">
-        {{ section.settings.heading }}
-    </div>
+  <div class="custom-grid-heading">
+    {{ section.settings.heading }}
+  </div>
   <div class="grid-section">
     {% for block in section.blocks %}
       <div class="grid-item" {{ block.shopify_attributes }}>
@@ -232,27 +231,25 @@
         select.classList.remove('open');
       });
     });
-
   });
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const popups = document.querySelectorAll('.product-popup-overlay');
 
-document.addEventListener('DOMContentLoaded', () => {
-  const popups = document.querySelectorAll('.product-popup-overlay');
+    popups.forEach((popup) => {
+      const addToCartBtn = popup.querySelector('.add-to-cart-btn');
+      const errorMsg = popup.querySelector('.popup-error-message');
+      const variantsScript = popup.querySelector('[data-variants]');
+      const productVariants = variantsScript ? JSON.parse(variantsScript.textContent) : [];
 
-  popups.forEach((popup) => {
-    const addToCartBtn = popup.querySelector('.add-to-cart-btn');
-    const errorMsg = popup.querySelector('.popup-error-message');
-    const variantsScript = popup.querySelector('[data-variants]');
-    const productVariants = variantsScript ? JSON.parse(variantsScript.textContent) : [];
+      let selectedOptions = {
+        Color: null,
+        Size: null,
+        VariantId: null,
+        InStock: true,
+      };
 
-    let selectedOptions = {
-      Color: null,
-      Size: null,
-      VariantId: null,
-      InStock: true,
-    };
-
-    function findMatchingVariant() {
+      function findMatchingVariant() {
         return productVariants.find((variant) => {
           let colorMatch = true;
           let sizeMatch = true;
@@ -273,25 +270,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
           return colorMatch && sizeMatch;
         });
-    }
-
-
-
-    function checkFreeProductEligibility() {
-      if (selectedOptions.Color === 'Black' && selectedOptions.Size === 'M') {
-        console.log('You are eligible for a free product!');
-        return true;
       }
-      return false; 
-    }
 
-    // Handle color selection
+      function checkFreeProductEligibility() {
+        if (selectedOptions.Color === 'Black' && selectedOptions.Size === 'M') {
+          console.log('You are eligible for a free product!');
+          return true;
+        }
+        return false;
+      }
+
+      // Handle color selection
       popup.querySelectorAll('.option-btn').forEach((btn) => {
         btn.addEventListener('click', () => {
           popup.querySelectorAll('.option-btn').forEach((button) => {
             button.classList.remove('active');
           });
-        btn.classList.add('active');
+          btn.classList.add('active');
           selectedOptions.Color = btn.dataset.value;
 
           const variant = findMatchingVariant();
@@ -304,7 +299,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
           addToCartBtn.setAttribute('data-main-product', JSON.stringify(selectedOptions));
           errorMsg.style.display = 'none';
-
         });
       });
 
@@ -323,75 +317,73 @@ document.addEventListener('DOMContentLoaded', () => {
 
           addToCartBtn.setAttribute('data-main-product', JSON.stringify(selectedOptions));
           errorMsg.style.display = 'none';
-
         });
       });
 
+      // Add to cart
+      addToCartBtn.addEventListener('click', (e) => {
+        if (!selectedOptions.Color || !selectedOptions.Size) {
+          errorMsg.style.display = 'block';
+          errorMsg.textContent = 'Please select all required options.';
+          return;
+        }
 
-    // Add to cart
-    addToCartBtn.addEventListener('click', (e) => {
-      if (!selectedOptions.Color || !selectedOptions.Size) {
-        errorMsg.style.display = 'block';
-        errorMsg.textContent = 'Please select all required options.';
-        return;
-      }
+        if (!selectedOptions.InStock) {
+          errorMsg.style.display = 'block';
+          errorMsg.textContent = 'This variant is out of stock.';
+          return;
+        }
 
-      if (!selectedOptions.InStock) {
-        errorMsg.style.display = 'block';
-        errorMsg.textContent = 'This variant is out of stock.';
-        return;
-      }
+        errorMsg.style.display = 'none';
 
-      errorMsg.style.display = 'none';
+        // Get the variant ID of the addon product (from data attribute)
+        const addonProductId = addToCartBtn.dataset.addonProduct;
 
-      // Get the variant ID of the addon product (from data attribute)
-      const addonProductId = addToCartBtn.dataset.addonProduct;
+        // If the user is eligible for the free product, add both the main product and the addon product
+        const isEligibleForFreeProduct = checkFreeProductEligibility();
 
-      // If the user is eligible for the free product, add both the main product and the addon product
-      const isEligibleForFreeProduct = checkFreeProductEligibility();
+        const productsToAdd = [
+          {
+            id: selectedOptions.VariantId,
+            quantity: 1,
+          },
+        ];
 
-      const productsToAdd = [
-        {
-          id: selectedOptions.VariantId,
-          quantity: 1,
-        },
-      ];
+        if (isEligibleForFreeProduct && addonProductId) {
+          // If eligible for free product, add the addon product as well
+          productsToAdd.push({
+            id: addonProductId,
+            quantity: 1,
+          });
+        }
 
-      if (isEligibleForFreeProduct && addonProductId) {
-        // If eligible for free product, add the addon product as well
-        productsToAdd.push({
-          id: addonProductId,
-          quantity: 1,
-        });
-      }
-
-      // Add to cart API
-      fetch('/cart/add.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({ items: productsToAdd }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log('✅ Products added to cart:', data);
-          window.location.href = '/cart';
+        // Add to cart API
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({ items: productsToAdd }),
         })
-        .catch((err) => {
-          console.error('❌ Error adding to cart:', err);
-        });
+          .then((res) => res.json())
+          .then((data) => {
+            console.log('✅ Products added to cart:', data);
+            window.location.href = '/cart';
+          })
+          .catch((err) => {
+            console.error('❌ Error adding to cart:', err);
+          });
+      });
     });
   });
-});
 </script>
 
 {% schema %}
 {
   "name": "Product Grid Section",
   "settings": [
-     {
+    {
       "type": "text",
       "id": "heading",
       "label": "Heading",
@@ -403,7 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "label": "Free Product Variant ID",
       "info": "Enter the Variant ID for the free product here."
     },
-     {
+    {
       "type": "range",
       "id": "margin_top_desktop",
       "label": "Section Margin Top (Desktop)",
