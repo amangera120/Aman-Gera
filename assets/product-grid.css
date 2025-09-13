@@ -443,4 +443,12 @@
         padding-left: 4px;
         padding-right: 4px;
        }
+       .custom-grid-section .product-left-side-image-container{
+        width: 70%;
+       }
+
+       .custom-grid-section .product-right-side-information{
+         width: 75%;
+       }
+
     }
