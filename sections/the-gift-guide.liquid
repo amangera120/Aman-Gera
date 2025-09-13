@@ -1,5 +1,5 @@
+{{ 'the-gift-guide.css' | asset_url | stylesheet_tag }}
 <style>
-
 .the-gift-guide--{{ section.id }} {
   margin-top: {{ section.settings.margin_top_desktop }}px;
   margin-bottom: {{ section.settings.margin_bottom_desktop }}px;
@@ -7,18 +7,18 @@
   padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
 }
 
-  .the-gift-guide-bottom-container{
+  .the-gift-guide-top-container .the-gift-guide-bottom-container{
     display: flex;
     justify-content: space-between;
   }
 
-  .the-gift-guide-left-text-container{
+  .the-gift-guide-top-container .the-gift-guide-left-text-container{
     width: 40%;
     padding-right: 0;
     margin-top: 48px;
   }
 
-  .the-gift-guide-main-heading-text{
+  .the-gift-guide-top-container .the-gift-guide-main-heading-text{
     margin: 0;
     color: #000000;
     font-family: Jost;
@@ -32,7 +32,7 @@
     margin-bottom: 50px;
   }
 
-  .the-gift-guide-sub-heading-text{
+  .the-gift-guide-top-container .the-gift-guide-sub-heading-text{
     margin: 0;
     font-family: Jost;
     font-weight: 400;
@@ -43,11 +43,11 @@
     color: #000000;
   }
 
-  .the-gift-guide-button-container{
+  .the-gift-guide-top-container .the-gift-guide-button-container{
         margin-top: 50px;
   }
 
-  .the-gift-guide-button{
+  .the-gift-guide-top-container .the-gift-guide-button{
     padding: 15px;
     width: 220px;
     display: block;
@@ -69,41 +69,41 @@
      transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  .the-gift-guide-button:hover {
+  .the-gift-guide-top-container .the-gift-guide-button:hover {
     background-color: white;
     color: #000;
     border: 1px solid black;
 }
 
-.the-gift-guide-button {
+.the-gift-guide-top-container .the-gift-guide-button {
   display: inline-block;
   text-decoration: none;
   border: 1px solid white; /* Optional: makes it visible */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.the-gift-guide-button:hover {
+.the-gift-guide-top-container .the-gift-guide-button:hover {
     background-color: white;
     color: #000;
     border: 1px solid black;
 }
 
-  .the-gift-guide-right-container{
+  .the-gift-guide-top-container .the-gift-guide-right-container{
     width: 70%;
     line-height: 0;
   }
 
-  .The-gift-guide-upper{
+  .the-gift-guide-top-container .The-gift-guide-upper{
     width: 100%;
     height: auto;
     object-fit: contain;
   }
 
-      .The-gift-guide-main-container.mobile{
+      .the-gift-guide-top-container .The-gift-guide-main-container.mobile{
       display:  none;
     }
 
-.the-gift-guide-bottom-line-text.desktop {
+.the-gift-guide-top-container .the-gift-guide-bottom-line-text.desktop {
     text-align: center;
     background: #F5F5F5;
     padding: 10px 0;
@@ -118,44 +118,44 @@
     text-transform: uppercase;
 }
 
-.the-gift-guide-bottom-line-text.mobile {
+.the-gift-guide-top-container .the-gift-guide-bottom-line-text.mobile {
     display: none;
 }
 
    @media screen and (max-width: 1270px) {
-    .the-gift-guide-main-heading-text{
+    .the-gift-guide-top-container .the-gift-guide-main-heading-text{
       font-size: clamp(30px, 3.94vw, 50px);
       margin-bottom: 30px;
     }
 
-    .the-gift-guide-button-container {
+    .the-gift-guide-top-container .the-gift-guide-button-container {
         margin-top: 30px;
     }
 
-    .the-gift-guide-left-text-container {
+    .the-gift-guide-top-container .the-gift-guide-left-text-container {
         margin-top: 28px;
     }
    }
 
   @media screen and (max-width: 1070px) {
-      .the-gift-guide-main-heading-text{
+      .the-gift-guide-top-container .the-gift-guide-main-heading-text{
           font-size: 30px;
           margin-bottom: 15px;
       }
 
-      .the-gift-guide-button-container {
+      .the-gift-guide-top-container .the-gift-guide-button-container {
           margin-top: 15px;
       }
 
-      .the-gift-guide-left-text-container {
+      .the-gift-guide-top-container .the-gift-guide-left-text-container {
           margin-top: 20px;
       }
 
-      .the-gift-guide-sub-heading-text{
+      .the-gift-guide-top-container .the-gift-guide-sub-heading-text{
         font-size: 18px;
       }
 
-      .the-gift-guide-button {
+      .the-gift-guide-top-container .the-gift-guide-button {
         padding: 12px;
         width: 180px;
         display: block;
@@ -180,16 +180,16 @@
 
   @media screen and (max-width: 850px) {
 
-  .the-gift-guide-sub-heading-text {
+  .the-gift-guide-top-container .the-gift-guide-sub-heading-text {
       font-size: 12px;
   }
 
-  .the-gift-guide-main-heading-text {
+  .the-gift-guide-top-container .the-gift-guide-main-heading-text {
     font-size: 23px;
     margin-bottom: 15px;
 }
 
-.the-gift-guide-button {
+.the-gift-guide-top-container .the-gift-guide-button {
     padding: 12px;
     width: 150px;
     display: block;
@@ -222,20 +222,20 @@
     padding-top: {{ section.settings.padding_top_mobile }}px;
     padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
   }
-    .The-gift-guide-main-container.desktop{
+    .the-gift-guide-top-container .The-gift-guide-main-container.desktop{
       display:  none;
     }
     
-    .The-gift-guide-main-container.mobile{
+    .the-gift-guide-top-container .The-gift-guide-main-container.mobile{
       display:  block;
       text-align: center;
     }
 
-    .the-gift-guide-bottom-line-text.desktop {
+    .the-gift-guide-top-container .the-gift-guide-bottom-line-text.desktop {
         display: none;
     }
 
-    .the-gift-guide-bottom-line-text.mobile {
+    .the-gift-guide-top-container .the-gift-guide-bottom-line-text.mobile {
         display: block;
         color: #000000;
         font-family: Jost;
@@ -250,7 +250,7 @@
         padding: 10px 0;
     }
 
-    .the-gift-guide-main-heading-text{
+    .the-gift-guide-top-container .the-gift-guide-main-heading-text{
       color: #000000;
       font-family: Jost;
       font-weight: 500;
@@ -264,7 +264,7 @@
       vertical-align: middle;
     }
 
-    .the-gift-guide-subheading-mobile{
+    .the-gift-guide-top-container .the-gift-guide-subheading-mobile{
       font-family: Jost;
       font-weight: 400;
       font-style: Regular;
@@ -277,11 +277,11 @@
       margin-bottom: 12px;
     }
 
-    .the-gift-guide-mobile-image{
+    .the-gift-guide-top-container .the-gift-guide-mobile-image{
       position: relative;
     }
 
-    .the-gift-guide-mobile-button-container{
+    .the-gift-guide-top-container .the-gift-guide-mobile-button-container{
       position: absolute;
       left: 50%;
       bottom: 40px;
@@ -292,7 +292,7 @@
 
 
 </style>
-<section class = "the-gift-guide--{{ section.id }}">
+<section class = "the-gift-guide--{{ section.id }} the-gift-guide-top-container">
 
 <div class = "The-gift-guide-main-container desktop">
     <div class="the-gift-guide-upper-image">
