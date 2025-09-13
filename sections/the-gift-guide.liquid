@@ -86,11 +86,13 @@
           | image_tag: class: 'The-gift-guide-upper', loading: 'eager'
         }}
 
+        {% if section.settings.button_link and  section.settings.button_text != blank %}
         <div class="the-gift-guide-mobile-button-container">
           <a href="{{ section.settings.button_link }}" class="the-gift-guide-button">
             {{ section.settings.button_text }}
           </a>
         </div>
+        {% endif %}
       </div>
     </div>
 {% endif %}
