@@ -1,4 +1,5 @@
 {{ 'the-gift-guide.css' | asset_url | stylesheet_tag }}
+
 <style>
   .the-gift-guide--{{ section.id }} {
       margin-top: {{ section.settings.margin_top_desktop }}px;
@@ -9,10 +10,10 @@
 
   @media screen and (max-width: 768px) {
       .the-gift-guide--{{ section.id }} {
-      margin-top: {{ section.settings.margin_top_mobile }}px;
-      margin-bottom: {{ section.settings.margin_bottom_mobile }}px;
-      padding-top: {{ section.settings.padding_top_mobile }}px;
-      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+        margin-top: {{ section.settings.margin_top_mobile }}px;
+        margin-bottom: {{ section.settings.margin_bottom_mobile }}px;
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
       }
   }
 </style>
