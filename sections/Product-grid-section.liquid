@@ -45,7 +45,7 @@
             <path d="M5.09033 8.47192H11.1343" stroke="black" stroke-linecap="square" stroke-linejoin="round"/>
           </svg>
         </div>
-        
+
       </div>
       <!-- Hidden Popup for this product -->
       <div class="product-popup-overlay" id="popup-{{ block.id }}">
@@ -190,7 +190,7 @@
     document.body.style.overflow = 'unset';
     // Reset selected options in the popup
     const colorButtons = popup.querySelectorAll('.option-btn');
-    colorButtons.forEach((btn) => btn.classList.remove('active')); // optional: reset active state
+    colorButtons.forEach((btn) => btn.classList.remove('active'));
 
     const selectTriggers = popup.querySelectorAll('.select-trigger .label-name');
     selectTriggers.forEach((span) => {
