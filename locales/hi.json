@@ -1,0 +1,217 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "announcements": {
+      "previous_announcement": "पिछली घोषणा",
+      "next_announcement": "अगली घोषणा",
+      "announcement_bar": "घोषणा पट्टी"
+    },
+    "header": {
+      "cart_count": {
+        "one": "{{ count }} आइटम",
+        "other": "{{ count }} आइटम"
+      }
+    },
+    "cart": {
+      "remove_title": "{{ title }} हटाएँ",
+      "new_estimated_total": "नया अनुमानित कुल",
+      "note": "विशेष निर्देश आदेश",
+      "empty": "आपकी गाड़ी खाली है",
+      "login": {
+        "title": "एक खाता है?"
+      }
+    },
+    "collection_template": {
+      "empty": "कोई उत्पाद नहीं मिला"
+    },
+    "quick_order_list": {
+      "product_total": "उत्पाद उप-योग",
+      "items_added": {
+        "one": "{{ quantity }} आइटम जोड़ा गया",
+        "other": "{{ quantity }} आइटम जोड़े गए"
+      },
+      "product_variants": "उत्पाद प्रकार"
+    }
+  },
+  "general": {
+    "password_page": {
+      "login_password_button": "पासवर्ड का उपयोग करके दर्ज करें"
+    },
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "फेसबुक पर सांझा करें",
+        "share_on_pinterest": "Pinterest पर पिन करें"
+      }
+    },
+    "continue_shopping": "खरीदारी जारी रखें",
+    "pagination": {
+      "page": "पृष्ठ {{ number }}"
+    },
+    "search": {
+      "reset": "खोज शब्द साफ़ करें"
+    },
+    "cart": {
+      "view": "कार्ट देखें ( {{ count }} )",
+      "item_added": "आइटम को आपके कार्ट में शामिल किया गया"
+    },
+    "share": {
+      "success_message": "लिंक क्लिपबोर्ड पर कॉपी किया गया"
+    }
+  },
+  "newsletter": {
+    "success": "सदस्यता लेने के लिए धन्यवाद"
+  },
+  "accessibility": {
+    "link_messages": {
+      "new_window": "एक नई विंडो में खुलता है।",
+      "external": "बाहरी वेबसाइट खोलता है."
+    },
+    "collapsible_content_title": "संक्षिप्त करने योग्य सामग्री",
+    "complementary_products": "पूरक उत्पाद"
+  },
+  "blogs": {
+    "article": {
+      "read_more_title": "और पढ़ें: {{ title }}",
+      "comments": {
+        "one": "{{ count }} टिप्पणी",
+        "other": "{{ count }} टिप्पणियाँ"
+      },
+      "share": "इस लेख का हिस्सा"
+    }
+  },
+  "onboarding": {
+    "product_title": "उदाहरण उत्पाद शीर्षक",
+    "collection_title": "आपके संग्रह का नाम"
+  },
+  "products": {
+    "product": {
+      "inventory_in_stock_show_count": "{{ quantity }}",
+      "product_variants": "उत्पाद प्रकार",
+      "quantity": {
+        "input_label": "{{ product }} की मात्रा",
+        "minimum_of": "न्यूनतम {{ quantity }}",
+        "maximum_of": "अधिकतम {{ quantity }}",
+        "min_of": "न्यूनतम {{ quantity }}",
+        "max_of": "अधिकतम {{ quantity }}",
+        "note": "मात्रा नियम देखें"
+      },
+      "volume_pricing": {
+        "note": "वॉल्यूम मूल्य निर्धारण उपलब्ध",
+        "price_at_each_html": "{{ price }} /प्रति"
+      },
+      "pickup_availability": {
+        "view_store_info": "स्टोर की जानकारी देखें",
+        "pick_up_available": "पिकअप उपलब्ध है"
+      },
+      "price": {
+        "from_price_html": "{{ price }} से"
+      },
+      "share": "इस उत्पाद को साझा करें",
+      "view_full_details": "पूरी जानकारी देखें",
+      "xr_button": "अपने स्थान में देखें",
+      "duties_included": "कर्तव्य शामिल हैं।",
+      "duties_and_taxes_included": "शुल्क और कर शामिल हैं।"
+    },
+    "facets": {
+      "filters_selected": {
+        "one": "{{ count }} चयनित",
+        "other": "{{ count }} चयनित"
+      },
+      "product_count_simple": {
+        "one": "{{ count }} उत्पाद",
+        "other": "{{ count }} उत्पाद"
+      }
+    }
+  },
+  "templates": {
+    "search": {
+      "results_pages_with_count": {
+        "one": "{{ count }} पृष्ठ",
+        "other": "{{ count }} पृष्ठ"
+      },
+      "results_suggestions_with_count": {
+        "one": "{{ count }} सुझाव",
+        "other": "{{ count }} सुझाव"
+      },
+      "results_products_with_count": {
+        "one": "{{ count }} उत्पाद",
+        "other": "{{ count }} उत्पाद"
+      },
+      "results_with_count": {
+        "one": "{{ count }} परिणाम",
+        "other": "{{ count }} परिणाम"
+      },
+      "search_for": "“ {{ terms }} ” खोजें"
+    }
+  },
+  "localization": {
+    "update_country": "देश/क्षेत्र अपडेट करें",
+    "popular_countries_regions": "लोकप्रिय देश/क्षेत्र"
+  },
+  "customer": {
+    "account": {
+      "return": "खाता विवरण पर लौटें"
+    },
+    "activate_account": {
+      "title": "खाता सक्रिय करें",
+      "password_confirm": "पासवर्ड की पुष्टि कीजिये",
+      "submit": "खाता सक्रिय करें",
+      "cancel": "आमंत्रण अस्वीकार करें"
+    },
+    "addresses": {
+      "add_new": "एक नया पता लिखो",
+      "set_default": "डिफ़ॉल्ट पते के रूप में सेट करें"
+    },
+    "login_page": {
+      "forgot_password": "अपना कूट शब्द भूल गए?",
+      "guest_title": "अतिथि के रूप में जारी रखें"
+    },
+    "order": {
+      "title": "आदेश {{ name }}",
+      "date_html": "{{ date }} को रखा गया",
+      "cancelled_reason": "कारण: {{ reason }}",
+      "shipping_address": "शिपिंग पता",
+      "fulfillment_status": "पूर्ति स्थिति",
+      "fulfilled_at_html": "पूर्ण {{ date }}",
+      "tracking_number": "ट्रैकिंग नंबर"
+    },
+    "orders": {
+      "order_number_link": "आदेश संख्या {{ number }}",
+      "fulfillment_status": "पूर्ति स्थिति"
+    },
+    "recover_password": {
+      "title": "अपना पासवर्ड रीसेट करें"
+    },
+    "reset_password": {
+      "title": "खाता पासवर्ड रीसेट करें",
+      "subtext": "नया पारण शब्द भरे",
+      "password_confirm": "पासवर्ड की पुष्टि कीजिये"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "shop_link": "ऑनलाइन स्टोर पर जाएँ",
+      "add_to_apple_wallet": "Apple वॉलेट में जोड़ें",
+      "copy_code": "उपहार कार्ड कोड कॉपी करें",
+      "expiration_date": "समाप्त {{ expires_on }}",
+      "copy_code_success": "कोड सफलतापूर्वक कॉपी किया गया"
+    }
+  },
+  "recipient": {
+    "form": {
+      "email_label": "प्राप्तकर्ता का ईमेल",
+      "email_label_optional_for_no_js_behavior": "प्राप्तकर्ता ईमेल (वैकल्पिक)",
+      "name_label": "प्राप्तकर्ता का नाम (वैकल्पिक)",
+      "message_label": "संदेश (वैकल्पिक)",
+      "send_on_label": "भेजें (वैकल्पिक)"
+    }
+  }
+}
